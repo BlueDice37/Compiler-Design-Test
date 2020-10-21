@@ -1,0 +1,15 @@
+%{
+        #include<stdio.h>
+%}
+%%
+\/\/(.*) {};
+\/\*(.*\n)*.*\*\/ {};
+%%
+
+int main()
+{
+        printf("Enter your Code:\n");
+        yylex();
+        printf("\nComments Removed\n");
+        return 0;
+}

@@ -1,0 +1,21 @@
+%{
+        #include<stdio.h>
+        int i=0;
+%}
+%%
+[a-z]+[0-9._]+@[a-z]+".com" {i--;}
+%%
+int main()
+{
+        printf("Type your email and press ctrl+d:\n");
+        yylex();
+        if(i<0)
+        {
+                printf("\nValid email\n");
+        }
+        else
+        {
+                printf("\nInvalid\n");
+        }
+        return 0;
+}
